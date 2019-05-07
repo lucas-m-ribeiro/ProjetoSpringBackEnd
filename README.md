@@ -1,4 +1,4 @@
 # ProjetoSpringBackEnd
 
-![alt text](./imagens/requisitos.png)
+![alt text](./imagens/requ.png)
 
