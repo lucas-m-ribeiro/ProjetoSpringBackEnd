@@ -1,5 +1,7 @@
 package com.fatec.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -11,14 +13,17 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.springframework.data.annotation.Id;
+
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.FIELD)	
 @Entity
 @Table(name = "carro")
-public class Carro {
+public class Carro implements Serializable{
 	
 	private static final long serialVersionUID = 1507218635788384719L;
-
+	
+	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
@@ -38,7 +43,6 @@ public class Carro {
     @Column(name = "KM", length = 20, nullable = false)
 	private double km;
     
-	
 	public Long getId() {
 		return id;
 	}

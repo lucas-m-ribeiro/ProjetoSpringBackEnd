@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.fatec.model.Carro;
 
-
 public interface CarroService{
 	
 	public Carro salvar(Carro carro);

@@ -19,7 +19,6 @@ public class CarroController {
 	@Autowired
 	private CarroService cs;
 	
-	
 	public void SetCarroService(CarroService cs) {
 		this.cs = cs;
 	}
@@ -28,5 +27,4 @@ public class CarroController {
 	public ResponseEntity<Carro> pesquisarPorId(@PathVariable("id") Long id) {
 		return new ResponseEntity<Carro>(cs.buscarPorId(id), HttpStatus.OK);
 	}
-
 }
