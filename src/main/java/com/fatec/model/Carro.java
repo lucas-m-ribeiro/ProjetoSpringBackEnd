@@ -1,11 +1,13 @@
 package com.fatec.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,28 +16,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
-@Table(name = "carro")
-public class Carro {
+@Table(name = "tb_cr")
+public class Carro implements Serializable {
 	
-	private static final long serialVersionUID = 1507218635788384719L;
-
+	private static final long serialVersionUID = -4175224450033765996L;
+	
+	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "CR_CD")
     private Long id;
 	
-    @Column(name = "NOME", unique=true, length = 20, nullable = false)
+    @Column(name = "CR_NM", unique=true, length = 50, nullable = false)
 	private String nome;
 	
-    @Column(name = "MARCA", length = 20, nullable = false)
+    @Column(name = "CR_MRC", length = 50, nullable = false)
 	private String marca;
 	
-    @Column(name = "COR", length = 20, nullable = false)
+    @Column(name = "CR_COR", length = 50, nullable = false)
 	private String cor;
 	
-    @Column(name = "ANO", length = 20, nullable = false)
+    @Column(name = "CR_ANO", length = 20, nullable = false)
 	private int ano;
 	
-    @Column(name = "KM", length = 20, nullable = false)
+    @Column(name = "CR_KM", length = 20, nullable = false)
 	private double km;
     
 	
@@ -74,8 +77,5 @@ public class Carro {
 	}
 	public void setKm(double km) {
 		this.km = km;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }
