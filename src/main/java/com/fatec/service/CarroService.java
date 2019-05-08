@@ -1,7 +1,8 @@
-package fatec.com.projeto.service;
+package com.fatec.service;
+
 import java.util.List;
 
-import fatec.com.projeto.model.Carro;
+import com.fatec.model.Carro;
 
 
 public interface CarroService{

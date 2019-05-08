@@ -1,8 +1,9 @@
-package fatec.com.projeto.repository;
+package com.fatec.repository;
+
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
-import fatec.com.projeto.model.Carro;
+import com.fatec.model.Carro;
 
 public interface CarroRepository extends CrudRepository<Carro, Long> {
 	

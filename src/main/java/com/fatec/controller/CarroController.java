@@ -1,4 +1,5 @@
-package fatec.com.projeto.controller;
+package com.fatec.controller;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import fatec.com.projeto.model.Carro;
-import fatec.com.projeto.service.CarroService;
+import com.fatec.model.Carro;
+import com.fatec.service.CarroService;
 
 @RestController
 @RequestMapping(value = "/carro")
