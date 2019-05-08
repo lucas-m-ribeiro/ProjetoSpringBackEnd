@@ -1,3 +1,4 @@
+package com.fatec.projeto;
 
 
 import org.springframework.boot.SpringApplication;
