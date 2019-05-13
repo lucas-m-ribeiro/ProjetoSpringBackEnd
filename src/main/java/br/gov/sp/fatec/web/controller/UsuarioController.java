@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.gov.sp.fatec.model.Carro;
 import br.gov.sp.fatec.model.Usuario;
 import br.gov.sp.fatec.service.UsuarioService;
 import br.gov.sp.fatec.view.View;
@@ -60,6 +61,12 @@ public class UsuarioController {
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.setLocation(uriComponentsBuilder.path("/getById?id=" + usuario.getId()).build().toUri());
 		return new ResponseEntity<Usuario>(usuario, responseHeaders, HttpStatus.CREATED);
+	}
+	
+	@RequestMapping(value = "/deleteById/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Usuario> deletePorId(@PathVariable("id") Long id) {
+		usuarioService.excluir(id);
+		return new ResponseEntity<Usuario>(HttpStatus.OK);
 	}
 	
 }

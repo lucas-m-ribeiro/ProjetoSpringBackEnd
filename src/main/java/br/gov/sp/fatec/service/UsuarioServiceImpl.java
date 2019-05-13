@@ -117,4 +117,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return senha;
 	}
 
+	@Override
+	public void excluir(Long id) {
+		usuarioRepo.deleteById(id);
+	}
+
 }
