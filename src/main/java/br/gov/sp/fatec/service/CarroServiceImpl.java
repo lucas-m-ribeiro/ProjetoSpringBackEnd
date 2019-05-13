@@ -37,7 +37,6 @@ public class CarroServiceImpl implements CarroService {
 		}
 		return retorno;
 	}
-
 	
 	@Override
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -50,7 +49,7 @@ public class CarroServiceImpl implements CarroService {
 		carroRepo.deleteById(idCarro);
 	}
 
-	@Override
+	@Override	
 	public Carro buscarPorId(Long idCarro) {
 		Optional<Carro> carro = carroRepo.findById(idCarro);
 		if(carro.isPresent()) {
@@ -59,4 +58,8 @@ public class CarroServiceImpl implements CarroService {
 		return null;
 	}
 
+	@Override
+	public Carro editar(Carro carro) {
+		return carroRepo.e
+	}
 }

@@ -56,6 +56,12 @@ public class CarroController {
 		return new ResponseEntity<Carro>(HttpStatus.OK);
 	}
 	
-//	SO FALTA O EDITAR 
+	@RequestMapping(value = "/editar", method = RequestMethod.POST)
+	public ResponseEntity<Carro> editar(@RequestBody Carro carro, UriComponentsBuilder uriComponentsBuilder) {
+		carro = carroService.editar(carro);
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.setLocation(uriComponentsBuilder.path("/getById/" + carro.getId()).build().toUri());
+		return new ResponseEntity<Carro>(carro, responseHeaders, HttpStatus.CREATED);
+	}
 
 }
