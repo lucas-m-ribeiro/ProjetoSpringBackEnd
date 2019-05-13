@@ -50,9 +50,12 @@ public class CarroController {
 		return new ResponseEntity<Carro>(carroService.buscarPorId(id), HttpStatus.OK);
 	}
 	
-//	@RequestMapping(value = "/deleteById/{id}", method = RequestMethod.GET)
-//	public ResponseEntity<Carro> deletePorId(@PathVariable("id") Long id) {
-//		return new ResponseEntity<Carro>(HttpStatus.OK);
-//	}
+	@RequestMapping(value = "/deleteById/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Carro> deletePorId(@PathVariable("id") Long id) {
+		carroService.excluir(id);
+		return new ResponseEntity<Carro>(HttpStatus.OK);
+	}
+	
+//	SO FALTA O EDITAR 
 
 }

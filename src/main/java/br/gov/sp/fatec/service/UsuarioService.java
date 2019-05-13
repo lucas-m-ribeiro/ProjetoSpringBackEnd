@@ -15,5 +15,7 @@ public interface UsuarioService {
 	public List<Usuario> todos();
 	
 	public Usuario salvar(Usuario usuario);
+	
+	public void excluir(Long id);
 
 }
