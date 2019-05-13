@@ -13,8 +13,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.springframework.data.annotation.Id;
-
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)	
 @Entity
@@ -79,11 +77,8 @@ public class Carro implements Serializable {
 	public void setKm(double km) {
 		this.km = km;
 	}
-<<<<<<< HEAD
-}
-=======
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 }
->>>>>>> 2dce22fcbb9038321d5028495f87611fb21a9364
