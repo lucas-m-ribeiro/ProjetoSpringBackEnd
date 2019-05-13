@@ -1,13 +1,12 @@
-package com.fatec.projeto;
-
+package br.gov.sp.fatec;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjetoApplication {
+public class AppBackEnd {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjetoApplication.class, args);
+		SpringApplication.run(AppBackEnd.class, args);
 	}
 }

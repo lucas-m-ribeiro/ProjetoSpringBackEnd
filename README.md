@@ -1,34 +1,18 @@
-# ProjetoSpringBackEnd
+# spring-rest-security
 
-![alt text](./imagens/requ.png)
+Projeto exemplo contendo uma API REST criada usando Spring Boot e Spring Data JPA. A autenticação/autorização é realizada pelo Spring Security e utiliza JWT.
 
-**Objetivo:** O projeto consiste, em criar uma aplicação web completa utilziando frameworks da familia Spring, e para o front-end será utilizado o vue.js, que se trata de uma biblioteca javaScript para criar componentes de tela para front-end. 
+## Banco de dados
 
-## Requisitos funcionais levantados para a criação do sistema.
+Utilize o script MySQL contido no arquivo **MySQL_Script.sql** para criar e popular o Banco de Dados.
 
-- O sistema deve conter um login
-- Duas autorizações (admin, user)
-- Cadastro de Veículos
-- Reserva
-- Cancela reserva
-- Regras de negocio para calcular reserva
-- Listar todos os carros disponíveis
-- Listar todos os carros reservados
-- CRUD de clientes
-- CRUD de veiculos
-- Listar todos os usuarios
-- Listar os carros reservados por pessoa
+## Usuários
 
-### Frameworks utilzados neste projeto
-Neste projeto, foram utilizados os seguintes frameworks:
+Os seguintes usuários/senhas estão disponíveis para login:
+* admin/admin
+* teste/teste
 
-#### Backend:
-- Spring Boot
-- Spring MVC
-- Spring data JPA
-- spring Security
-- Hibernate
-
-#### Front-end:
-- Bootstrap
-- vue.js
+## Project setup
+```
+mvn install
+```

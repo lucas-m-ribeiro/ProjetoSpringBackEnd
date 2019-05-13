@@ -1,12 +1,12 @@
-package com.fatec.repository;
-
+package br.gov.sp.fatec.repository;
 
 import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
-import com.fatec.model.Carro;
+
+import br.gov.sp.fatec.model.Carro;
 
 public interface CarroRepository extends CrudRepository<Carro, Long> {
 	
-	public List <Carro> findByCarrosNome();
 
 }

@@ -1,13 +1,11 @@
-package com.fatec.service;
+package br.gov.sp.fatec.service;
 
 import java.util.List;
+import br.gov.sp.fatec.model.Carro;
 
-import com.fatec.model.Carro;
-
-public interface CarroService{
-	
+public interface CarroService {
+	public List<Carro> todos();	
 	public Carro salvar(Carro carro);
 	public void excluir(Long idCarro);
-	public List<Carro> listarTodos();
 	public Carro buscarPorId(Long idCarro);
 }
