@@ -56,6 +56,5 @@ public class CarroController {
 		return new ResponseEntity<Carro>(HttpStatus.OK);
 	}
 	
-//	SO FALTA O EDITAR 
 
 }

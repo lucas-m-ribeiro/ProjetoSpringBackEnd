@@ -84,5 +84,5 @@ public class Reserva implements Serializable {
 	public void setData_fim(String data_fim) {
 		this.data_fim = data_fim;
 	}
-       
+
 }
