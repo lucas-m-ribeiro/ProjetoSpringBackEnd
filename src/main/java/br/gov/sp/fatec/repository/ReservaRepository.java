@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.gov.sp.fatec.model.Carro;
+import br.gov.sp.fatec.model.Reserva;
 
-public interface CarroRepository extends CrudRepository<Carro, Long> {
+public interface ReservaRepository extends CrudRepository<Reserva, Long> {
 
 }

@@ -34,10 +34,10 @@ public class Carro implements Serializable {
 	private Long id;
     
     @Column(name = "CAR_NOME", length = 100, nullable = false)
-    private String assunto;
+    private String nome;
     
     @Column(name = "CAR_KM", length = 500, nullable = false)
-    private String texto;
+    private String km;
     
     @Column(name = "CAR_CATEGORIA", length = 20 , nullable = true)
     private String categoria;
@@ -65,20 +65,20 @@ public class Carro implements Serializable {
 		this.id = id;
 	}
 
-	public String getAssunto() {
-		return assunto;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setAssunto(String assunto) {
-		this.assunto = assunto;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getTexto() {
-		return texto;
+	public String getKm() {
+		return km;
 	}
 
-	public void setTexto(String texto) {
-		this.texto = texto;
+	public void setKm(String km) {
+		this.km = km;
 	}
 
 	public String getCategoria() {
@@ -128,5 +128,5 @@ public class Carro implements Serializable {
 	public void setDisponivel(Boolean disponivel) {
 		this.disponivel = disponivel;
 	}
-    
+
 }
