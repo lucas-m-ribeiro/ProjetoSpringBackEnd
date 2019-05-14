@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
@@ -56,6 +57,24 @@ public class CarroServiceImpl implements CarroService {
 			return carro.get();
 		}
 		return null;
+	}
+
+	@Override
+	public List<Carro> buscarDisponiveis() {
+		List<Carro> retorno = new ArrayList<Carro>();
+		for(Carro carro: carroRepo.buscarDisponiveis()) {
+			retorno.add(carro);
+		}
+		return retorno;
+	}
+
+	@Override
+	public List<Carro> buscarReservados() {
+		List<Carro> retorno = new ArrayList<Carro>();
+		for(Carro carro: carroRepo.buscarReservados()) {
+			retorno.add(carro);
+		}
+		return retorno;
 	}
 
 }

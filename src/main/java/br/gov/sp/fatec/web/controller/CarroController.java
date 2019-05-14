@@ -32,11 +32,34 @@ public class CarroController {
 		this.carroService = carroService;
 	}
 
+//	
+//	@RequestMapping(value = "/teste", method = RequestMethod.GET)
+//	public ResponseEntity<Collection<Carro>> getAllDisponiveis() {
+//		return new ResponseEntity<Collection<Carro>>(carroService.teste(), HttpStatus.OK);
+//	}
+	
+//	
+////  TODOS DISPONIVEIS 
+//	
+	@RequestMapping(value = "/getAllDisponivel", method = RequestMethod.GET)
+	public ResponseEntity<Collection<Carro>> getAllDisponiveis() {
+		return new ResponseEntity<Collection<Carro>>(carroService.buscarDisponiveis(), HttpStatus.OK);
+	}
+	
+//	TODOS
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public ResponseEntity<Collection<Carro>> getAll() {
 		return new ResponseEntity<Collection<Carro>>(carroService.todos(), HttpStatus.OK);
 	}
+//	
+////	NAO DISPONIVEL
+//	
+	@RequestMapping(value = "/getAllReservados", method = RequestMethod.GET)
+	public ResponseEntity<Collection<Carro>> getAllReservados() {
+		return new ResponseEntity<Collection<Carro>>(carroService.buscarReservados(), HttpStatus.OK);
+	}
 	
+//	ADICIONAR UM CARRO
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ResponseEntity<Carro> salvar(@RequestBody Carro carro, UriComponentsBuilder uriComponentsBuilder) {
 		carro = carroService.salvar(carro);
@@ -45,11 +68,13 @@ public class CarroController {
 		return new ResponseEntity<Carro>(carro, responseHeaders, HttpStatus.CREATED);
 	}
 	
+//	GET CARRO
 	@RequestMapping(value = "/getById/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Carro> pesquisarPorId(@PathVariable("id") Long id) {
 		return new ResponseEntity<Carro>(carroService.buscarPorId(id), HttpStatus.OK);
 	}
 	
+//	DELETAR CARRO
 	@RequestMapping(value = "/deleteById/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Carro> deletePorId(@PathVariable("id") Long id) {
 		carroService.excluir(id);

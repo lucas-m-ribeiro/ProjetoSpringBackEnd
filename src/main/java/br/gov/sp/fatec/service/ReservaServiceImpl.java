@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
+import br.gov.sp.fatec.model.Carro;
 import br.gov.sp.fatec.model.Reserva;
 import br.gov.sp.fatec.model.Usuario;
 import br.gov.sp.fatec.repository.ReservaRepository;
@@ -47,6 +48,15 @@ public class ReservaServiceImpl implements ReservaService {
 	@Override
 	public void excluir(Long id) {
 		reservaRepo.deleteById(id);
+	}
+
+	@Override
+	public Reserva buscarPorId(Long id) {
+		Optional<Reserva> reserva = reservaRepo.findById(id);
+		if(reserva.isPresent()) {
+			return reserva.get();
+		}
+		return null;
 	}
 
 }

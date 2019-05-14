@@ -7,4 +7,5 @@ public interface ReservaService {
 	public List<Reserva> todos();	
 	public Reserva salvar(Reserva reserva);
 	public void excluir(Long id);
+	public Reserva buscarPorId(Long Id);
 }
