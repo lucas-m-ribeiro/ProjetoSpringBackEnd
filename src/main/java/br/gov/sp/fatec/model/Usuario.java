@@ -37,30 +37,30 @@ public class Usuario implements UserDetails{
 	@Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "USR_ID")
-	@JsonView({View.UsuarioCompleto.class, View.UsuarioResumoAlternativo.class, View.Anotacao.class})
+	
 	private Long id;
     
     @Column(name = "USR_NOME", unique=true, length = 20, nullable = false)
-    @JsonView({View.UsuarioResumo.class, View.UsuarioResumoAlternativo.class, View.Anotacao.class})
+    
     private String nome;
     
     @Column(name = "USR_SENHA", length = 50, nullable = false)
-    @JsonView(View.UsuarioCompleto.class)
+    
     private String senha;
     
     @Column(name = "USR_CPF", length = 25, nullable = false)
-    @JsonView(View.UsuarioCompleto.class)
+    
     private String tel;
     
     @Column(name = "USR_TELEFONE", length = 50, nullable = true)
-    @JsonView(View.UsuarioCompleto.class)
+    
     private String cpf;
     
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "TB_USUARIO_AUTORIZACAO", 
     	joinColumns = { @JoinColumn(name = "USR_ID") }, 
     	inverseJoinColumns = { @JoinColumn(name = "AUT_ID") })
-    @JsonView({View.UsuarioResumo.class, View.UsuarioResumoAlternativo.class})
+    
     @XmlElement(name = "autorizacao")
     private List<Autorizacao> autorizacoes;
 

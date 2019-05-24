@@ -58,5 +58,18 @@ public class ReservaServiceImpl implements ReservaService {
 		}
 		return null;
 	}
+//
+//	@Override
+//	public List<Object> todosInfo() {
+//		System.out.println("TO AQUI");
+//		List<Object> retorno = new ArrayList<Object>();
+//		for(Object reserva: reservaRepo.ReservaJoin()) {
+//			retorno.add(reserva);
+//		}
+//		
+//		System.out.println(retorno);
+//		
+//		return retorno;
+//	}
 
 }

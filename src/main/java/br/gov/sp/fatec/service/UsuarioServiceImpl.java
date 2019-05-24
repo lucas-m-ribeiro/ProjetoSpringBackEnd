@@ -86,7 +86,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public Usuario salvar(Usuario usuario) {
 		if(!usuario.getAutorizacoes().isEmpty()) {
 			for(Autorizacao aut: usuario.getAutorizacoes()) {
-				// Se nao existe, cria
 				if(aut.getId() == null && autorizacaoRepo.findByNome(aut.getNome()) == null) {
 					autorizacaoRepo.save(aut);
 				}

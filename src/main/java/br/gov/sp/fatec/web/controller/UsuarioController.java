@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
 @RequestMapping(value = "/usuario")
+@CrossOrigin
 public class UsuarioController {
 	
 	@Autowired
@@ -33,13 +35,13 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping(value = "/get/{nome}", method = RequestMethod.GET)
-	@JsonView(View.UsuarioCompleto.class)
+	
 	public ResponseEntity<Collection<Usuario>> pesquisar(@PathVariable("nome") String nome) {
 		return new ResponseEntity<Collection<Usuario>>(usuarioService.buscar(nome), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/getById", method = RequestMethod.GET)
-	@JsonView(View.UsuarioCompleto.class)
+	
 	public ResponseEntity<Usuario> get(@RequestParam(value="id", defaultValue="1") Long id) {
 		Usuario usuario = usuarioService.buscar(id);
 		if(usuario == null) {
@@ -49,13 +51,13 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
-	@JsonView(View.UsuarioResumoAlternativo.class)
+	
 	public ResponseEntity<Collection<Usuario>> getAll() {
 		return new ResponseEntity<Collection<Usuario>>(usuarioService.todos(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	@JsonView(View.UsuarioCompleto.class)
+	
 	public ResponseEntity<Usuario> save(@RequestBody Usuario usuario, UriComponentsBuilder uriComponentsBuilder) {
 		usuario = usuarioService.salvar(usuario);
 		HttpHeaders responseHeaders = new HttpHeaders();

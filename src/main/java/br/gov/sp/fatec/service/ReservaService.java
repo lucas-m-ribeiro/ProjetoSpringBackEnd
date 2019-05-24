@@ -8,4 +8,5 @@ public interface ReservaService {
 	public Reserva salvar(Reserva reserva);
 	public void excluir(Long id);
 	public Reserva buscarPorId(Long Id);
+//	public List<Object> todosInfo();
 }

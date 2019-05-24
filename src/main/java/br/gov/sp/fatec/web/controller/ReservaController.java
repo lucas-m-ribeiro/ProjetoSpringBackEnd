@@ -32,6 +32,15 @@ public class ReservaController {
 	public void setCarroService(ReservaService reservaService) {
 		this.reservaService = reservaService;
 	}
+	
+//	RESERVA JOIN CARRO, USER
+//	@RequestMapping(value = "/getAllJoin", method = RequestMethod.GET)
+//	public ResponseEntity<Reserva> getAllJoin() {
+////		return new ResponseEntity<Collection<Object>>(reservaService.todosInfo(), HttpStatus.OK);
+//		reservaService.todosInfo();
+//		return new ResponseEntity<Reserva>(HttpStatus.OK);
+//
+//	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public ResponseEntity<Collection<Reserva>> getAll() {
