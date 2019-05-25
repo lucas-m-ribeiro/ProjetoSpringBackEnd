@@ -16,4 +16,5 @@ public interface ReservaRepository extends CrudRepository<Reserva, Long> {
 //	@Query("SELECT r FROM Reserva r, Carro c, Usuario u WHERE r.car_id = c.id AND r.usr_id = u.id")
 //	public List<Object> ReservaJoin();
 	
+	public List<Reserva> findByRsv_usr_id(Long id);
 }

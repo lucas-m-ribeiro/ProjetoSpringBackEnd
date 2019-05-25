@@ -16,6 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.gov.sp.fatec.model.Carro;
 import br.gov.sp.fatec.model.Reserva;
+import br.gov.sp.fatec.model.Usuario;
 import br.gov.sp.fatec.service.ReservaService;
 import br.gov.sp.fatec.view.View;
 
@@ -33,22 +34,16 @@ public class ReservaController {
 		this.reservaService = reservaService;
 	}
 	
-//	RESERVA JOIN CARRO, USER
-//	@RequestMapping(value = "/getAllJoin", method = RequestMethod.GET)
-//	public ResponseEntity<Reserva> getAllJoin() {
-////		return new ResponseEntity<Collection<Object>>(reservaService.todosInfo(), HttpStatus.OK);
-//		reservaService.todosInfo();
-//		return new ResponseEntity<Reserva>(HttpStatus.OK);
-//
-//	}
-
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public ResponseEntity<Collection<Reserva>> getAll() {
 		return new ResponseEntity<Collection<Reserva>>(reservaService.todos(), HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/teste/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Collection<Reserva>> teste(@PathVariable("id") Long id) {
+		return new ResponseEntity<Collection<Reserva>>(reservaService.teste(id), HttpStatus.OK);
+	}
 	
-//	CRIA RESERVA
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ResponseEntity<Reserva> salvar(@RequestBody Reserva reserva, UriComponentsBuilder uriComponentsBuilder) {
 		reserva = reservaService.salvar(reserva);
@@ -57,12 +52,19 @@ public class ReservaController {
 		return new ResponseEntity<Reserva>(reserva, responseHeaders, HttpStatus.CREATED);
 	}
 	
-	
-//	DELETAR RESERVA
 	@RequestMapping(value = "/deleteById/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Reserva> deletePorId(@PathVariable("id") Long id) {
 		reservaService.excluir(id);
 		return new ResponseEntity<Reserva>(HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/getById/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Reserva> get(@PathVariable("id") Long id) {
+		Reserva reserva = reservaService.buscarPorId(id);
+		if(reserva == null) {
+			return new ResponseEntity<Reserva>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Reserva>(reserva, HttpStatus.OK);
 	}
 
 }

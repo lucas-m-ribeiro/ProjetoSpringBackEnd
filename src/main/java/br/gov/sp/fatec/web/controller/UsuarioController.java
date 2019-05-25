@@ -40,9 +40,9 @@ public class UsuarioController {
 		return new ResponseEntity<Collection<Usuario>>(usuarioService.buscar(nome), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/getById", method = RequestMethod.GET)
+	@RequestMapping(value = "/getById/{id}", method = RequestMethod.GET)
 	
-	public ResponseEntity<Usuario> get(@RequestParam(value="id", defaultValue="1") Long id) {
+	public ResponseEntity<Usuario> get(@PathVariable("id") Long id) {
 		Usuario usuario = usuarioService.buscar(id);
 		if(usuario == null) {
 			return new ResponseEntity<Usuario>(HttpStatus.NOT_FOUND);
